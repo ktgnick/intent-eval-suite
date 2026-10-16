@@ -1,0 +1,37 @@
+id,language,text,intent
+en-01,en,"Where is my package? It was supposed to arrive yesterday.",order_status
+en-02,en,"Can you tell me the status of order 4471?",order_status
+en-03,en,"I haven't gotten a shipping update in three days.",order_status
+en-04,en,"Has my order shipped yet?",order_status
+en-05,en,"I want to cancel my order before it ships.",cancel_order
+en-06,en,"Please cancel order 4471, I ordered by mistake.",cancel_order
+en-07,en,"Stop my subscription order, I don't want the next one.",cancel_order
+en-08,en,"How do I cancel an order I just placed?",cancel_order
+en-09,en,"The jacket arrived damaged, I want my money back.",refund_request
+en-10,en,"Can I get a refund for the shoes I returned?",refund_request
+en-11,en,"I was charged twice, please refund the extra payment.",refund_request
+en-12,en,"Refund me for the missing item in my order.",refund_request
+es-01,es,"¿Dónde está mi paquete? Debía llegar ayer.",order_status
+es-02,es,"¿Me puedes decir el estado del pedido 4471?",order_status
+es-03,es,"Llevo tres días sin ninguna actualización de envío.",order_status
+es-04,es,"¿Ya se envió mi pedido?",order_status
+es-05,es,"Quiero cancelar mi pedido antes de que salga.",cancel_order
+es-06,es,"Por favor cancela el pedido 4471, lo pedí por error.",cancel_order
+es-07,es,"Cancela mi pedido de suscripción, no quiero el siguiente.",cancel_order
+es-08,es,"¿Cómo cancelo un pedido que acabo de hacer?",cancel_order
+es-09,es,"La chaqueta llegó dañada, quiero que me devuelvan el dinero.",refund_request
+es-10,es,"¿Puedo recibir un reembolso por los zapatos que devolví?",refund_request
+es-11,es,"Me cobraron dos veces, por favor reembolsen el pago extra.",refund_request
+es-12,es,"Reembolsen el artículo que faltaba en mi pedido.",refund_request
+fr-01,fr,"Où est mon colis ? Il devait arriver hier.",order_status
+fr-02,fr,"Pouvez-vous me donner l'état de la commande 4471 ?",order_status
+fr-03,fr,"Je n'ai aucune mise à jour d'expédition depuis trois jours.",order_status
+fr-04,fr,"Ma commande a-t-elle déjà été expédiée ?",order_status
+fr-05,fr,"Je veux annuler ma commande avant son expédition.",cancel_order
+fr-06,fr,"Annulez la commande 4471, je l'ai passée par erreur.",cancel_order
+fr-07,fr,"Annulez ma commande d'abonnement, je ne veux pas la suivante.",cancel_order
+fr-08,fr,"Comment annuler une commande que je viens de passer ?",cancel_order
+fr-09,fr,"La veste est arrivée abîmée, je veux être remboursé.",refund_request
+fr-10,fr,"Puis-je être remboursé pour les chaussures que j'ai retournées ?",refund_request
+fr-11,fr,"On m'a débité deux fois, merci de rembourser le paiement en trop.",refund_request
+fr-12,fr,"Remboursez l'article manquant dans ma commande.",refund_request
