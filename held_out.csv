@@ -1,0 +1,16 @@
+id,language,text,intent
+en-h01,en,"I ordered a blue jacket last week and it still hasn't shipped. Can you tell me when it goes out?",order_status
+en-h02,en,"Please cancel my order and refund me, it hasn't left the warehouse yet.",cancel_order
+en-h03,en,"The box arrived today but the second shoe is missing. I want my money back for that item.",refund_request
+en-h04,en,"I want to stop my monthly subscription. Also, where is my last shipment?",cancel_order
+en-h05,en,"I was charged twice for order 8812, which was delivered last Tuesday. Please refund the extra charge.",refund_request
+es-h01,es,"¿Cuándo llega mi pedido? Lo compré hace cinco días.",order_status
+es-h02,es,"Quiero cancelar mi suscripción de este mes.",cancel_order
+es-h03,es,"Me llegó el paquete roto y quiero que me devuelvan el dinero.",refund_request
+es-h04,es,"Anulen mi pedido, todavía no ha salido del almacén, y dígame también el estado del envío.",cancel_order
+es-h05,es,"Me cobraron dos veces por el pedido 5531, que ya me entregaron. Quiero el reembolso.",refund_request
+fr-h01,fr,"Mon colis est en retard, pouvez-vous me dire où il se trouve ?",order_status
+fr-h02,fr,"Je veux annuler ma commande, elle n'est pas encore partie.",cancel_order
+fr-h03,fr,"Il me manque un article dans ma commande livrée, je veux être remboursé pour cet article.",refund_request
+fr-h04,fr,"Je souhaite résilier mon abonnement et savoir si ma dernière livraison est prévue.",cancel_order
+fr-h05,fr,"J'ai commandé par erreur hier, pouvez-vous annuler la commande ?",cancel_order

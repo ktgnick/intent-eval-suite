@@ -1,11 +1,18 @@
 import json
 import os
+import time
+from collections import defaultdict, deque
 from pathlib import Path
 from typing import Literal
 
 import anthropic
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from pydantic import BaseModel, Field
+
+# Simple per-client limit so a public URL can't run up the API bill.
+# In-memory, so it resets on restart; fine for a portfolio demo.
+RATE_LIMIT = int(os.environ.get("RATE_LIMIT_PER_MIN", "30"))
+_hits: dict[str, deque] = defaultdict(deque)
 
 # Rubric is a snapshot of LLMeval's data/rubric.md, loaded into the system prompt.
 RUBRIC = (Path(__file__).parent / "rubric.md").read_text(encoding="utf-8")
@@ -52,8 +59,22 @@ def health():
     return {"status": "ok", "model": MODEL}
 
 
+def check_rate_limit(request: Request) -> None:
+    # Behind a host proxy the real client is the first X-Forwarded-For entry.
+    forwarded = request.headers.get("x-forwarded-for", "")
+    client = forwarded.split(",")[0].strip() or (request.client.host if request.client else "unknown")
+    now = time.monotonic()
+    window = _hits[client]
+    while window and now - window[0] > 60:
+        window.popleft()
+    if len(window) >= RATE_LIMIT:
+        raise HTTPException(status_code=429, detail="rate limit exceeded, try again in a minute")
+    window.append(now)
+
+
 @app.post("/classify", response_model=ClassifyResponse)
-def classify(req: ClassifyRequest):
+def classify(req: ClassifyRequest, request: Request):
+    check_rate_limit(request)
     if not os.environ.get("ANTHROPIC_API_KEY"):
         raise HTTPException(status_code=503, detail="ANTHROPIC_API_KEY is not set")
 

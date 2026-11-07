@@ -1,0 +1,16 @@
+id,language,gold,pred,reason
+en-h01,en,order_status,order_status,"Asks when the order ships; shipping information request, no cancel or refund."
+en-h02,en,cancel_order,cancel_order,Requests cancellation and refund on an order not yet shipped.
+en-h03,en,refund_request,refund_request,Order arrived with a missing item; customer wants money back for it.
+en-h04,en,cancel_order,cancel_order,Asks to cancel subscription and also asks about shipment; tie-break 1 applies.
+en-h05,en,refund_request,refund_request,Double charge on a delivered order; customer requests refund of extra charge.
+es-h01,es,order_status,order_status,"Customer asks when their order arrives, a delivery timing question."
+es-h02,es,cancel_order,cancel_order,"Customer wants to cancel their monthly subscription, which is a cancellation request."
+es-h03,es,refund_request,refund_request,Package arrived damaged and customer wants money returned; item received means shipped.
+es-h04,es,cancel_order,cancel_order,Asks to cancel and also asks shipping status; tie-break 1 applies.
+es-h05,es,refund_request,refund_request,Customer wants refund for double charge on a delivered order.
+fr-h01,fr,order_status,order_status,Customer asks where their late package is; shipping/delivery location inquiry.
+fr-h02,fr,cancel_order,cancel_order,Customer wants to cancel an order that has not shipped yet.
+fr-h03,fr,refund_request,refund_request,Customer wants a refund for a missing item from a delivered order.
+fr-h04,fr,cancel_order,cancel_order,Asks to cancel subscription and also asks status; tie-break 1 applies.
+fr-h05,fr,cancel_order,cancel_order,Customer ordered by mistake yesterday and asks to cancel the order.

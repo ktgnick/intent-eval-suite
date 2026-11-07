@@ -6,12 +6,13 @@ from fastapi import HTTPException
 
 import main
 
-GOLD = Path.home() / "Desktop" / "LLMeval" / "data" / "gold.csv"
-OUT = Path(__file__).parent / "gold_predictions.csv"
+# Usage: python test_gold.py [dataset.csv]   (default: LLMeval gold set)
+DATASET = Path(sys.argv[1]) if len(sys.argv) > 1 else Path.home() / "Desktop" / "LLMeval" / "data" / "gold.csv"
+OUT = Path(__file__).parent / f"{DATASET.stem}_predictions.csv"
 
 
 def main_run():
-    rows = [r for r in csv.DictReader(GOLD.open(encoding="utf-8")) if r["intent"] != "ambiguous"]
+    rows = [r for r in csv.DictReader(DATASET.open(encoding="utf-8")) if r["intent"] != "ambiguous"]
     results = []
     failures = 0
     for r in rows:
