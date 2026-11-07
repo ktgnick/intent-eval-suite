@@ -73,8 +73,10 @@ def check_rate_limit(request: Request) -> None:
 
 
 @app.post("/classify", response_model=ClassifyResponse)
-def classify(req: ClassifyRequest, request: Request):
-    check_rate_limit(request)
+def classify(req: ClassifyRequest, request: Request = None):
+    # The limit applies to HTTP callers. Local scripts call this without a request.
+    if request is not None:
+        check_rate_limit(request)
     if not os.environ.get("ANTHROPIC_API_KEY"):
         raise HTTPException(status_code=503, detail="ANTHROPIC_API_KEY is not set")
 
