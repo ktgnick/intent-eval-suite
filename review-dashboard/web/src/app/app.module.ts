@@ -12,12 +12,15 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatInputModule } from '@angular/material/input';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { TryItComponent } from './try-it/try-it.component';
 
 @NgModule({
-  declarations: [AppComponent, DashboardComponent],
+  declarations: [AppComponent, DashboardComponent, TryItComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -32,6 +35,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatSlideToggleModule,
     MatTableModule,
     MatProgressBarModule,
+    MatTabsModule,
+    MatInputModule,
   ],
   bootstrap: [AppComponent],
 })

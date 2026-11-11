@@ -27,6 +27,24 @@ test.describe('Intent review dashboard', () => {
     await expect(page.locator('table tr[mat-row]')).toHaveCount(12);
   });
 
+  test('try-it shows the label the classifier returns', async ({ page }) => {
+    // Stub the classifier so the test does not depend on the live service.
+    await page.route('http://localhost:8000/classify', (route) =>
+      route.fulfill({
+        status: 200,
+        contentType: 'application/json',
+        headers: { 'Access-Control-Allow-Origin': '*' },
+        body: JSON.stringify({ intent: 'order_status', reason: 'Customer asks where their package is.' }),
+      }),
+    );
+    await page.goto('/');
+    await page.getByRole('tab', { name: 'Try it' }).click();
+    await page.getByLabel('Customer message').fill('Where is my package?');
+    await page.getByRole('button', { name: 'Classify' }).click();
+    await expect(page.locator('.result .intent')).toHaveText('order_status');
+    await expect(page.getByText('Customer asks where their package is.')).toBeVisible();
+  });
+
   test('page fits a phone-width screen without horizontal scrolling', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 800 });
     await page.goto('/');

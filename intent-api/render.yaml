@@ -11,3 +11,5 @@ services:
         sync: false   # set this in the Render dashboard, never in the repo
       - key: RATE_LIMIT_PER_MIN
         value: "30"
+      - key: ALLOWED_ORIGINS
+        sync: false   # set to the dashboard's site URL, e.g. https://<bucket>.s3-website-<region>.amazonaws.com, plus http://localhost:4200 for local work

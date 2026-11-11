@@ -2,7 +2,7 @@
 
 A dashboard for reviewing an intent classifier's predictions against gold-labeled messages. It shows accuracy per run, filterable prediction tables, a confusion matrix, and breakdowns by language and intent.
 
-- **Front end:** Angular 16 with Angular Material, served as static files from S3.
+- **Front end:** Angular 16 with Angular Material, published to GitHub Pages. It has a Results tab (this data) and a Try it tab (calls the live classifier).
 - **API:** Spring Boot 4 (Java 21) with JDBC and read-only SQL over a `scored` view.
 - **Database:** H2 in memory, with the schema and seed data managed by Liquibase.
 - **Tests:** JUnit for the data layer, Playwright for end-to-end checks in a real browser.
@@ -69,10 +69,13 @@ Filter values are checked against a fixed list, and all values reach SQL as boun
 
 ## Deploy
 
-1. **API on Render.** Create a Blueprint from this repo. It builds `api/Dockerfile`. Set `APP_CORS_ALLOWED_ORIGINS` to the S3 site URL.
-2. **Front end URL.** Put the Render URL into `web/src/environments/environment.prod.ts` as `apiUrl`, ending in `/api`.
-3. **S3 site.** Create a bucket with static website hosting, and allow public read on its objects.
-4. **CI deploy.** In GitHub, set the variable `DEPLOY_ENABLED` to `true`, the variables `AWS_REGION` and `S3_BUCKET`, and the secret `AWS_ROLE_ARN` for an IAM role that trusts GitHub OIDC and can write to the bucket.
+The live site is `https://ktgnick.github.io/intent-eval-suite/`. Set it up in this order.
+
+1. **Review API on Render.** New > Web Service, pick `intent-eval-suite`, and set Runtime to **Docker**, Root Directory to `review-dashboard/api`, and Health Check Path to `/actuator/health`. Add the environment variable `APP_CORS_ALLOWED_ORIGINS` with the value `https://ktgnick.github.io`. Note the service URL Render gives you. (`render.yaml` in this folder is written for a repo whose root is this folder, so Render's form is simpler here.)
+2. **Classifier on Render.** Open the existing `intent-api` service and point it at this repo with Root Directory `intent-api`. Set `ALLOWED_ORIGINS` to `https://ktgnick.github.io`. Keep `ANTHROPIC_API_KEY` set. Note its URL.
+3. **Front end URLs.** In `web/src/environments/environment.prod.ts`, set `apiUrl` to the review API URL plus `/api`, and `classifierUrl` to the classifier URL. Commit and push.
+4. **GitHub Pages.** In the repo settings, open Pages and set Source to **GitHub Actions**.
+5. **Turn on deploy.** In the repo settings, under Variables, add `DEPLOY_ENABLED` with the value `true`. The deploy job then builds with base path `/intent-eval-suite/` and publishes to Pages.
 
 The API runs on Render's free tier, which sleeps when idle. The first request after a quiet period can take 30–60 seconds.
 

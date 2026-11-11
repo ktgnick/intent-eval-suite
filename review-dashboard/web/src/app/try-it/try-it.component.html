@@ -1,0 +1,32 @@
+<section aria-labelledby="try-heading">
+  <h2 id="try-heading">Try the classifier</h2>
+  <p class="muted">
+    Type a customer message. The live classifier returns one intent label and a short reason.
+    Free hosting can take a few seconds to wake up.
+  </p>
+
+  <mat-form-field appearance="outline" class="full">
+    <mat-label>Customer message</mat-label>
+    <textarea matInput rows="3" maxlength="2000" [(ngModel)]="text" aria-label="Customer message"></textarea>
+  </mat-form-field>
+
+  <div class="samples">
+    <span class="muted small">Try an example:</span>
+    <button mat-stroked-button *ngFor="let s of samples" (click)="text = s">{{ s }}</button>
+  </div>
+
+  <button mat-flat-button color="primary" (click)="classify()" [disabled]="busy || !text.trim()">
+    {{ busy ? 'Classifying...' : 'Classify' }}
+  </button>
+
+  <p *ngIf="error" class="error" role="alert">{{ error }}</p>
+
+  <mat-card *ngIf="result" class="result" aria-live="polite">
+    <mat-card-content>
+      <p class="muted small">Intent</p>
+      <p class="intent">{{ result.intent }}</p>
+      <p class="muted small">Reason</p>
+      <p>{{ result.reason }}</p>
+    </mat-card-content>
+  </mat-card>
+</section>
