@@ -4,8 +4,8 @@ A FastAPI service that labels a customer support message with one intent: `order
 
 ## Live demo
 
-- **Try it in the browser:** https://intent-api-fft0.onrender.com/docs
-- **Health check:** https://intent-api-fft0.onrender.com/health
+- **Try it in the browser:** https://intent-eval-suite-1.onrender.com/docs
+- **Health check:** https://intent-eval-suite-1.onrender.com/health
 
 The root URL returns 404 by design. Use `/docs` for the interactive page.
 
@@ -28,7 +28,7 @@ Both are single runs. The gold set was used to build the rubric, so treat its sc
 ## Use
 
 ```bash
-curl -X POST https://intent-api-fft0.onrender.com/classify \
+curl -X POST https://intent-eval-suite-1.onrender.com/classify \
   -H "Content-Type: application/json" \
   -d '{"text": "Where is my package? It was supposed to arrive yesterday."}'
 ```
@@ -65,7 +65,7 @@ python test_gold.py held_out.csv
 
 ## Deployment
 
-Deployed on Render from `render.yaml`. The API key is set in the Render dashboard. A monthly spend limit is also set on the Anthropic key.
+Deployed on Render from `render.yaml`. The API key and `ALLOWED_ORIGINS` (the dashboard's GitHub Pages origin, `https://ktgnick.github.io`) are set in the Render dashboard. A monthly spend limit is also set on the Anthropic key.
 
 ## Files
 

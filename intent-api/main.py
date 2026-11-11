@@ -7,6 +7,7 @@ from typing import Literal
 
 import anthropic
 from fastapi import FastAPI, HTTPException, Request
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
 # Simple per-client limit so a public URL can't run up the API bill.
@@ -32,6 +33,10 @@ Use ambiguous only when the rubric's escalation rule applies.
 Messages may be in English, Spanish, or French."""
 
 app = FastAPI(title="Customer intent classifier")
+
+# Browsers on these origins may call the API. Comma-separated, set per deployment.
+ALLOWED_ORIGINS = [o.strip() for o in os.environ.get("ALLOWED_ORIGINS", "http://localhost:4200").split(",") if o.strip()]
+app.add_middleware(CORSMiddleware, allow_origins=ALLOWED_ORIGINS, allow_methods=["GET", "POST"], allow_headers=["Content-Type"])
 
 
 class ClassifyRequest(BaseModel):

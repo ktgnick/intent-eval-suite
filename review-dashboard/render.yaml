@@ -8,4 +8,4 @@ services:
     healthCheckPath: /actuator/health
     envVars:
       - key: APP_CORS_ALLOWED_ORIGINS
-        sync: false   # the S3 site URL, for example http://your-bucket.s3-website-us-east-1.amazonaws.com
+        sync: false   # the GitHub Pages origin: https://ktgnick.github.io (no path)
