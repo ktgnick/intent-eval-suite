@@ -1,0 +1,7 @@
+api/target/
+web/node_modules/
+web/dist/
+web/.angular/
+web/test-results/
+web/playwright-report/
+.DS_Store

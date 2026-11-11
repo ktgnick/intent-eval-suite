@@ -1,0 +1,5 @@
+id,label,description
+model_a,Model A (LLMeval baseline),"Predictions from the earlier project, scored on the gold set."
+model_b,Model B (LLMeval baseline),"Predictions from the earlier project, scored on the gold set."
+haiku_gold,Claude Haiku 5.5 with rubric prompt: gold set,intent-api classifier on the 36-row gold set.
+haiku_held_out,Claude Haiku 5.5 with rubric prompt: held-out set,intent-api classifier on 15 messages written after the rubric.

@@ -1,0 +1,52 @@
+id,language,text,intent,set_name
+en-01,en,Where is my package? It was supposed to arrive yesterday.,order_status,gold
+en-02,en,Can you tell me the status of order 4471?,order_status,gold
+en-03,en,I haven't gotten a shipping update in three days.,order_status,gold
+en-04,en,Has my order shipped yet?,order_status,gold
+en-05,en,I want to cancel my order before it ships.,cancel_order,gold
+en-06,en,"Please cancel order 4471, I ordered by mistake.",cancel_order,gold
+en-07,en,"Stop my subscription order, I don't want the next one.",cancel_order,gold
+en-08,en,How do I cancel an order I just placed?,cancel_order,gold
+en-09,en,"The jacket arrived damaged, I want my money back.",refund_request,gold
+en-10,en,Can I get a refund for the shoes I returned?,refund_request,gold
+en-11,en,"I was charged twice, please refund the extra payment.",refund_request,gold
+en-12,en,Refund me for the missing item in my order.,refund_request,gold
+es-01,es,¿Dónde está mi paquete? Debía llegar ayer.,order_status,gold
+es-02,es,¿Me puedes decir el estado del pedido 4471?,order_status,gold
+es-03,es,Llevo tres días sin ninguna actualización de envío.,order_status,gold
+es-04,es,¿Ya se envió mi pedido?,order_status,gold
+es-05,es,Quiero cancelar mi pedido antes de que salga.,cancel_order,gold
+es-06,es,"Por favor cancela el pedido 4471, lo pedí por error.",cancel_order,gold
+es-07,es,"Cancela mi pedido de suscripción, no quiero el siguiente.",cancel_order,gold
+es-08,es,¿Cómo cancelo un pedido que acabo de hacer?,cancel_order,gold
+es-09,es,"La chaqueta llegó dañada, quiero que me devuelvan el dinero.",refund_request,gold
+es-10,es,¿Puedo recibir un reembolso por los zapatos que devolví?,refund_request,gold
+es-11,es,"Me cobraron dos veces, por favor reembolsen el pago extra.",refund_request,gold
+es-12,es,Reembolsen el artículo que faltaba en mi pedido.,refund_request,gold
+fr-01,fr,Où est mon colis ? Il devait arriver hier.,order_status,gold
+fr-02,fr,Pouvez-vous me donner l'état de la commande 4471 ?,order_status,gold
+fr-03,fr,Je n'ai aucune mise à jour d'expédition depuis trois jours.,order_status,gold
+fr-04,fr,Ma commande a-t-elle déjà été expédiée ?,order_status,gold
+fr-05,fr,Je veux annuler ma commande avant son expédition.,cancel_order,gold
+fr-06,fr,"Annulez la commande 4471, je l'ai passée par erreur.",cancel_order,gold
+fr-07,fr,"Annulez ma commande d'abonnement, je ne veux pas la suivante.",cancel_order,gold
+fr-08,fr,Comment annuler une commande que je viens de passer ?,cancel_order,gold
+fr-09,fr,"La veste est arrivée abîmée, je veux être remboursé.",refund_request,gold
+fr-10,fr,Puis-je être remboursé pour les chaussures que j'ai retournées ?,refund_request,gold
+fr-11,fr,"On m'a débité deux fois, merci de rembourser le paiement en trop.",refund_request,gold
+fr-12,fr,Remboursez l'article manquant dans ma commande.,refund_request,gold
+en-h01,en,I ordered a blue jacket last week and it still hasn't shipped. Can you tell me when it goes out?,order_status,held_out
+en-h02,en,"Please cancel my order and refund me, it hasn't left the warehouse yet.",cancel_order,held_out
+en-h03,en,The box arrived today but the second shoe is missing. I want my money back for that item.,refund_request,held_out
+en-h04,en,"I want to stop my monthly subscription. Also, where is my last shipment?",cancel_order,held_out
+en-h05,en,"I was charged twice for order 8812, which was delivered last Tuesday. Please refund the extra charge.",refund_request,held_out
+es-h01,es,¿Cuándo llega mi pedido? Lo compré hace cinco días.,order_status,held_out
+es-h02,es,Quiero cancelar mi suscripción de este mes.,cancel_order,held_out
+es-h03,es,Me llegó el paquete roto y quiero que me devuelvan el dinero.,refund_request,held_out
+es-h04,es,"Anulen mi pedido, todavía no ha salido del almacén, y dígame también el estado del envío.",cancel_order,held_out
+es-h05,es,"Me cobraron dos veces por el pedido 5531, que ya me entregaron. Quiero el reembolso.",refund_request,held_out
+fr-h01,fr,"Mon colis est en retard, pouvez-vous me dire où il se trouve ?",order_status,held_out
+fr-h02,fr,"Je veux annuler ma commande, elle n'est pas encore partie.",cancel_order,held_out
+fr-h03,fr,"Il me manque un article dans ma commande livrée, je veux être remboursé pour cet article.",refund_request,held_out
+fr-h04,fr,Je souhaite résilier mon abonnement et savoir si ma dernière livraison est prévue.,cancel_order,held_out
+fr-h05,fr,"J'ai commandé par erreur hier, pouvez-vous annuler la commande ?",cancel_order,held_out

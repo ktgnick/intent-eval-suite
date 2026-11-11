@@ -1,0 +1,124 @@
+run_id,example_id,pred_intent,reason
+model_a,en-01,order_status,
+model_a,en-02,order_status,
+model_a,en-03,order_status,
+model_a,en-04,cancel_order,
+model_a,en-05,cancel_order,
+model_a,en-06,cancel_order,
+model_a,en-07,cancel_order,
+model_a,en-08,cancel_order,
+model_a,en-09,refund_request,
+model_a,en-10,order_status,
+model_a,en-11,refund_request,
+model_a,en-12,refund_request,
+model_a,es-01,order_status,
+model_a,es-02,order_status,
+model_a,es-03,order_status,
+model_a,es-04,order_status,
+model_a,es-05,cancel_order,
+model_a,es-06,cancel_order,
+model_a,es-07,order_status,
+model_a,es-08,cancel_order,
+model_a,es-09,cancel_order,
+model_a,es-10,refund_request,
+model_a,es-11,refund_request,
+model_a,es-12,order_status,
+model_a,fr-01,order_status,
+model_a,fr-02,order_status,
+model_a,fr-03,cancel_order,
+model_a,fr-04,order_status,
+model_a,fr-05,cancel_order,
+model_a,fr-06,refund_request,
+model_a,fr-07,cancel_order,
+model_a,fr-08,cancel_order,
+model_a,fr-09,refund_request,
+model_a,fr-10,order_status,
+model_a,fr-11,cancel_order,
+model_a,fr-12,refund_request,
+model_b,en-01,order_status,
+model_b,en-02,order_status,
+model_b,en-03,order_status,
+model_b,en-04,order_status,
+model_b,en-05,cancel_order,
+model_b,en-06,cancel_order,
+model_b,en-07,cancel_order,
+model_b,en-08,cancel_order,
+model_b,en-09,refund_request,
+model_b,en-10,refund_request,
+model_b,en-11,refund_request,
+model_b,en-12,refund_request,
+model_b,es-01,order_status,
+model_b,es-02,order_status,
+model_b,es-03,order_status,
+model_b,es-04,order_status,
+model_b,es-05,cancel_order,
+model_b,es-06,cancel_order,
+model_b,es-07,order_status,
+model_b,es-08,cancel_order,
+model_b,es-09,refund_request,
+model_b,es-10,refund_request,
+model_b,es-11,refund_request,
+model_b,es-12,refund_request,
+model_b,fr-01,order_status,
+model_b,fr-02,order_status,
+model_b,fr-03,cancel_order,
+model_b,fr-04,order_status,
+model_b,fr-05,cancel_order,
+model_b,fr-06,cancel_order,
+model_b,fr-07,cancel_order,
+model_b,fr-08,cancel_order,
+model_b,fr-09,refund_request,
+model_b,fr-10,refund_request,
+model_b,fr-11,refund_request,
+model_b,fr-12,refund_request,
+haiku_gold,en-01,order_status,Customer asks where their package is and when it will arrive.
+haiku_gold,en-02,order_status,"Customer asks for status of a specific order, which is shipping/delivery inquiry."
+haiku_gold,en-03,order_status,Customer asks about shipping update; no cancel or refund request.
+haiku_gold,en-04,order_status,"Asks whether the order has shipped, a shipping status question."
+haiku_gold,en-05,cancel_order,Customer explicitly wants the order canceled before shipping.
+haiku_gold,en-06,cancel_order,Customer explicitly asks to cancel an order placed by mistake.
+haiku_gold,en-07,cancel_order,Customer asks to stop a subscription so the next order is not sent.
+haiku_gold,en-08,cancel_order,"Customer wants to cancel a just-placed order, which has not shipped."
+haiku_gold,en-09,refund_request,Item arrived damaged and customer wants money back; order has shipped.
+haiku_gold,en-10,refund_request,Customer wants money back for a returned item; order already returned.
+haiku_gold,en-11,refund_request,Customer asks for money back on a double charge.
+haiku_gold,en-12,refund_request,Asks for money back for a missing item; tie-break 3 treats it as shipped.
+haiku_gold,es-01,order_status,Customer asks where their package is; delivery status inquiry.
+haiku_gold,es-02,order_status,"Asks for the status of order 4471, which is a shipping/delivery inquiry."
+haiku_gold,es-03,order_status,Customer asks about missing shipping updates for their order.
+haiku_gold,es-04,order_status,Asks whether the order has shipped yet (Spanish).
+haiku_gold,es-05,cancel_order,Customer wants to cancel an order before it ships.
+haiku_gold,es-06,cancel_order,Customer asks to cancel order 4471 placed by mistake.
+haiku_gold,es-07,cancel_order,Customer wants to cancel a subscription so the next order is stopped.
+haiku_gold,es-08,cancel_order,"Customer asks how to cancel a just-placed order, which has not shipped."
+haiku_gold,es-09,refund_request,"Jacket arrived damaged and customer wants money returned; item received, so shipped."
+haiku_gold,es-10,refund_request,Customer asks for money back on shoes already returned.
+haiku_gold,es-11,refund_request,Customer reports a double charge and asks for the extra payment refunded.
+haiku_gold,es-12,refund_request,"Asks for money back for a missing item, which counts as shipped."
+haiku_gold,fr-01,order_status,"Asks where the package is; delivery overdue, no cancel or refund request."
+haiku_gold,fr-02,order_status,"Asks for the status of order 4471, which relates to shipping or delivery."
+haiku_gold,fr-03,order_status,"Customer asks for shipping update after three days; French, shipping status inquiry."
+haiku_gold,fr-04,order_status,Asks whether the order has already shipped (shipping status inquiry).
+haiku_gold,fr-05,cancel_order,Customer wants to cancel an order before it ships.
+haiku_gold,fr-06,cancel_order,Customer asks to cancel order 4471 placed by mistake.
+haiku_gold,fr-07,cancel_order,Customer asks to cancel a subscription order before the next delivery.
+haiku_gold,fr-08,cancel_order,"Customer asks how to cancel an order just placed, so it has not shipped."
+haiku_gold,fr-09,refund_request,Jacket arrived damaged and customer wants a refund; tie-break 3 treats it as shipped.
+haiku_gold,fr-10,refund_request,Customer asks for a refund on shoes already returned.
+haiku_gold,fr-11,refund_request,Customer reports a double charge and asks for the extra payment refunded.
+haiku_gold,fr-12,refund_request,Customer asks for refund of a missing item; order treated as shipped.
+haiku_held_out,en-h01,order_status,"Asks when the order ships; a shipping timing question, no cancel or refund."
+haiku_held_out,en-h02,cancel_order,Requests cancellation and money back on an order not yet shipped.
+haiku_held_out,en-h03,refund_request,Order arrived with a missing item; customer wants money back for it.
+haiku_held_out,en-h04,cancel_order,Asks to cancel subscription and also asks status; tie-break 1 applies.
+haiku_held_out,en-h05,refund_request,Double charge on a delivered order; customer requests refund of extra charge.
+haiku_held_out,es-h01,order_status,"Customer asks when their order arrives, a delivery question."
+haiku_held_out,es-h02,cancel_order,"Customer wants to cancel their monthly subscription, which maps to cancel_order."
+haiku_held_out,es-h03,refund_request,Package arrived damaged and customer wants money back; treated as shipped.
+haiku_held_out,es-h04,cancel_order,Asks to cancel and also asks shipping status; tie-break 1 applies.
+haiku_held_out,es-h05,refund_request,Order delivered; customer wants refund for double charge.
+haiku_held_out,fr-h01,order_status,"Customer asks where their late package is, a delivery status question."
+haiku_held_out,fr-h02,cancel_order,Customer wants to cancel an order that has not shipped yet.
+haiku_held_out,fr-h03,refund_request,Missing item from delivered order; customer wants refund for that item.
+haiku_held_out,fr-h04,cancel_order,Asks to cancel subscription and also asks status; tie-break 1 applies.
+haiku_held_out,fr-h05,cancel_order,Customer ordered by mistake yesterday and asks to cancel the order.
