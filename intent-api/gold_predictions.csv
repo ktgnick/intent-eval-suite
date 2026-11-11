@@ -1,0 +1,37 @@
+id,language,gold,pred,reason
+en-01,en,order_status,order_status,Customer asks where their package is and when it will arrive.
+en-02,en,order_status,order_status,"Customer asks for status of a specific order, which is shipping/delivery inquiry."
+en-03,en,order_status,order_status,Customer asks about shipping update; no cancel or refund request.
+en-04,en,order_status,order_status,"Asks whether the order has shipped, a shipping status question."
+en-05,en,cancel_order,cancel_order,Customer explicitly wants the order canceled before shipping.
+en-06,en,cancel_order,cancel_order,Customer explicitly asks to cancel an order placed by mistake.
+en-07,en,cancel_order,cancel_order,Customer asks to stop a subscription so the next order is not sent.
+en-08,en,cancel_order,cancel_order,"Customer wants to cancel a just-placed order, which has not shipped."
+en-09,en,refund_request,refund_request,Item arrived damaged and customer wants money back; order has shipped.
+en-10,en,refund_request,refund_request,Customer wants money back for a returned item; order already returned.
+en-11,en,refund_request,refund_request,Customer asks for money back on a double charge.
+en-12,en,refund_request,refund_request,Asks for money back for a missing item; tie-break 3 treats it as shipped.
+es-01,es,order_status,order_status,Customer asks where their package is; delivery status inquiry.
+es-02,es,order_status,order_status,"Asks for the status of order 4471, which is a shipping/delivery inquiry."
+es-03,es,order_status,order_status,Customer asks about missing shipping updates for their order.
+es-04,es,order_status,order_status,Asks whether the order has shipped yet (Spanish).
+es-05,es,cancel_order,cancel_order,Customer wants to cancel an order before it ships.
+es-06,es,cancel_order,cancel_order,Customer asks to cancel order 4471 placed by mistake.
+es-07,es,cancel_order,cancel_order,Customer wants to cancel a subscription so the next order is stopped.
+es-08,es,cancel_order,cancel_order,"Customer asks how to cancel a just-placed order, which has not shipped."
+es-09,es,refund_request,refund_request,"Jacket arrived damaged and customer wants money returned; item received, so shipped."
+es-10,es,refund_request,refund_request,Customer asks for money back on shoes already returned.
+es-11,es,refund_request,refund_request,Customer reports a double charge and asks for the extra payment refunded.
+es-12,es,refund_request,refund_request,"Asks for money back for a missing item, which counts as shipped."
+fr-01,fr,order_status,order_status,"Asks where the package is; delivery overdue, no cancel or refund request."
+fr-02,fr,order_status,order_status,"Asks for the status of order 4471, which relates to shipping or delivery."
+fr-03,fr,order_status,order_status,"Customer asks for shipping update after three days; French, shipping status inquiry."
+fr-04,fr,order_status,order_status,Asks whether the order has already shipped (shipping status inquiry).
+fr-05,fr,cancel_order,cancel_order,Customer wants to cancel an order before it ships.
+fr-06,fr,cancel_order,cancel_order,Customer asks to cancel order 4471 placed by mistake.
+fr-07,fr,cancel_order,cancel_order,Customer asks to cancel a subscription order before the next delivery.
+fr-08,fr,cancel_order,cancel_order,"Customer asks how to cancel an order just placed, so it has not shipped."
+fr-09,fr,refund_request,refund_request,Jacket arrived damaged and customer wants a refund; tie-break 3 treats it as shipped.
+fr-10,fr,refund_request,refund_request,Customer asks for a refund on shoes already returned.
+fr-11,fr,refund_request,refund_request,Customer reports a double charge and asks for the extra payment refunded.
+fr-12,fr,refund_request,refund_request,Customer asks for refund of a missing item; order treated as shipped.
