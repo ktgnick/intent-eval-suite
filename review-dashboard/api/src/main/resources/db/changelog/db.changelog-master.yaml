@@ -1,0 +1,71 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-create-examples
+      author: review-dashboard
+      changes:
+        - createTable:
+            tableName: examples
+            columns:
+              - column: { name: id, type: VARCHAR(20), constraints: { primaryKey: true, nullable: false } }
+              - column: { name: language, type: VARCHAR(5), constraints: { nullable: false } }
+              - column: { name: text, type: VARCHAR(1000), constraints: { nullable: false } }
+              - column: { name: intent, type: VARCHAR(30), constraints: { nullable: false } }
+              - column: { name: set_name, type: VARCHAR(20), constraints: { nullable: false } }
+
+  - changeSet:
+      id: 002-create-runs
+      author: review-dashboard
+      changes:
+        - createTable:
+            tableName: runs
+            columns:
+              - column: { name: id, type: VARCHAR(40), constraints: { primaryKey: true, nullable: false } }
+              - column: { name: label, type: VARCHAR(120), constraints: { nullable: false } }
+              - column: { name: description, type: VARCHAR(300) }
+
+  - changeSet:
+      id: 003-create-predictions
+      author: review-dashboard
+      changes:
+        - createTable:
+            tableName: predictions
+            columns:
+              - column: { name: run_id, type: VARCHAR(40), constraints: { primaryKey: true, nullable: false, foreignKeyName: fk_predictions_run, references: runs(id) } }
+              - column: { name: example_id, type: VARCHAR(20), constraints: { primaryKey: true, nullable: false, foreignKeyName: fk_predictions_example, references: examples(id) } }
+              - column: { name: pred_intent, type: VARCHAR(30), constraints: { nullable: false } }
+              - column: { name: reason, type: VARCHAR(300) }
+
+  - changeSet:
+      id: 004-load-seed-data
+      author: review-dashboard
+      changes:
+        - loadData:
+            file: db/seed/examples.csv
+            tableName: examples
+            separator: ","
+            quotchar: '"'
+        - loadData:
+            file: db/seed/runs.csv
+            tableName: runs
+            separator: ","
+            quotchar: '"'
+        - loadData:
+            file: db/seed/predictions.csv
+            tableName: predictions
+            separator: ","
+            quotchar: '"'
+
+  - changeSet:
+      id: 005-create-scored-view
+      author: review-dashboard
+      comment: One row per scored prediction. Ambiguous gold labels are excluded, per the rubric.
+      changes:
+        - createView:
+            viewName: scored
+            selectQuery: >
+              SELECT p.run_id, e.id AS example_id, e.language, e.set_name, e.text,
+                     e.intent AS gold, p.pred_intent AS pred,
+                     CASE WHEN e.intent = p.pred_intent THEN TRUE ELSE FALSE END AS correct
+              FROM predictions p
+              JOIN examples e ON e.id = p.example_id
+              WHERE e.intent <> 'ambiguous'
