@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: review-api
+    runtime: docker
+    plan: free
+    dockerContext: ./api
+    dockerfilePath: ./api/Dockerfile
+    healthCheckPath: /actuator/health
+    envVars:
+      - key: APP_CORS_ALLOWED_ORIGINS
+        sync: false   # the S3 site URL, for example http://your-bucket.s3-website-us-east-1.amazonaws.com
